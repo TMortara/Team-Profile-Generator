@@ -1,7 +1,6 @@
-//const inquirer = require('inquirer');
-const fs = require("fs")
-const Question = require("./lib/Questions")
-const inquirer= require("inquirer")
+const fs = require("fs");
+const Question = require("./lib/Questions");
+const inquirer = require("inquirer");
 
 // fs.writeFile("./dist/log.txt", "Hello", err => {
 //     if(err){
@@ -11,19 +10,28 @@ const inquirer= require("inquirer")
 //     }
 // })
 function createEngineer(){
-    inquirer.prompt(new Question("engineer").assingCustomQuestion()).then(data =>{
-
-    })
+    inquirer.prompt(new Question("Engineer").assignCustomQuestion()).then(data =>{})
 }
 
-function menu(){
-    inquirer.prompt(new Question().assingCustomQuestion()).then(({action})=>{
+function createIntern(){
+    inquirer.prompt(new Question("Intern").assignCustomQuestion()).then(data =>{})
+}
+
+function nextStep(){
+    inquirer.prompt(new Question().assignCustomQuestion()).then(({action})=>{
         console.log(action)
         switch (action) {
             case "Add Engineer":
-                createEngineer()
+                createEngineer();
                 break;
-        
+
+            case "Add Intern":
+                createIntern();
+                break;
+            
+            case "Create Team Profile":
+                generateTeamProfile();
+            
             default:
                 break;
         }
@@ -32,10 +40,10 @@ function menu(){
 
 
 function init(){
-    inquirer.prompt(new Question("manager").assingCustomQuestion()).then(answers =>{
+    inquirer.prompt(new Question("Manager").assignCustomQuestion()).then(answers =>{
         console.log(answers)
-        menu()
+        nextStep();
     })
 }
 
-init()
+init();
