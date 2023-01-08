@@ -1,0 +1,39 @@
+/* * {
+
+} */
+
+header {
+    background-color: #ff4b69;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.card-deck {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1.5rem;
+}
+
+.card {
+    margin-bottom: 2rem;
+    background-color: #f0f0f0;;
+}
+
+.card-header {
+    background-color: #346bff;
+    color: white;
+}
+
+.list-container {
+    padding: 1.5rem;
+    background-color: #f0f0f0;
+    margin-block: auto;
+}
+
+.list-group {
+    border: #DADADA solid 1px;
+}

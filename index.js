@@ -80,10 +80,10 @@ function createTeamProfile() {
         managerCards = createManagerCard(employee);
       }  
       else if(employee.getRole() === "Engineer") {
-        engineerCards = createEngineerCard(employee);
+        engineerCards = engineerCards += createEngineerCard(employee);
       }
       else {
-        internCards = createInternCard(employee);
+        internCards = internCards += createInternCard(employee);
       }
     });
 
