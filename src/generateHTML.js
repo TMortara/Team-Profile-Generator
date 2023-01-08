@@ -1,3 +1,0 @@
-function generateHTML(data) {
-    return
-}

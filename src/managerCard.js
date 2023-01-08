@@ -12,3 +12,5 @@ function createManagerCard(manager) {
         </ul>
         </div>`
 }
+
+module.exports = createManagerCard;

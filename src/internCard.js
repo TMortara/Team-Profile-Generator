@@ -12,3 +12,5 @@ function createInternCard(intern) {
         </ul>
         </div>`
 }
+
+module.exports = createInternCard;

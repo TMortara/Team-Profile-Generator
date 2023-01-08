@@ -4,32 +4,41 @@ const fs = require("fs");
 //Questions for prompts
 const Question = require("./lib/Questions");
 
-//Employee Libraries
+//Employee classes
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
+//Employee cards and HTML structure
+const createManagerCard = require("./src/managerCard");
+const createEngineerCard = require("./src/engineerCard");
+const createInternCard = require("./src/internCard");
+const bodyHTML = require("./src/bodyHTML");
+
+
 let team = [];
 
-//Function to call Engineer questions
+//prompt user with Engineer questions and action question then creates the intern card
 function createEngineer(){
     inquirer.prompt(new Question("Engineer").assignCustomQuestion()).then(data =>{
-        team.push(data);
-        console.log(team);
+        const engineer = new Engineer(data.name, data.id, data.email, data.github)
+        team.push(engineer);
         nextStep();
     })
 }
 
-//Function to call Intern questions
+//prompt user with Intern questions and action question then creates the intern card
 function createIntern(){
     inquirer.prompt(new Question("Intern").assignCustomQuestion()).then(data =>{
-        team.push(data);
-        console.log(team);
+        const intern = new Intern(data.name, data.id, data.email, data.school)
+        team.push(intern);
+        // console.log(team);
         nextStep();
     })
 }
 
+//Creates new employee and applies questions for that role or generates team profile based on action question
 function nextStep(){
         inquirer.prompt(new Question().assignCustomQuestion()).then(({action})=>{
             console.log(action)
@@ -43,7 +52,7 @@ function nextStep(){
                     break;
                 
                 case "Generate Team Profile":
-                    // generateTeamProfile();
+                    createTeamProfile();
                     break;
                 
                 default:
@@ -51,17 +60,45 @@ function nextStep(){
             }
         })
 }
-//Create Team Profile file
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, err => {
-//         err ? console.log(err)
-//         : console.log("Your Team Profile has been generated SUCCESSFULLY!"); 
-//     });
-// }
 
+function createTeamProfile() {
+    let managerCards = "";
+    let engineerCards = "";
+    let internCards = "";
+
+    team.forEach(employee => { console.log(employee);
+      if(employee.getRole() === "Manager") {
+        managerCards = createManagerCard(employee);
+      }  
+      else if(employee.getRole() === "Engineer") {
+        engineerCards = createEngineerCard(employee);
+      }
+      else {
+        internCards = createInternCard(employee);
+      }
+    });
+
+    let teamCards = "";
+    teamCards = managerCards + engineerCards + internCards;
+
+    writeToFile("./dist/Team Profile.html", bodyHTML(teamCards));
+}
+
+
+//create Team Profile file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        err ? console.log(err)
+        : console.log("Your Team Profile has been generated SUCCESSFULLY!"); 
+    });
+}
+
+
+//initalize application
 function init(){
-    inquirer.prompt(new Question("Manager").assignCustomQuestion()).then(answers =>{
-        team.push(answers);
+    inquirer.prompt(new Question("Manager").assignCustomQuestion()).then(data =>{
+        const manager = new Manager(data.name, data.id, data.email, data.officeNumber)
+        team.push(manager);
         // console.log(answers)
         nextStep();
     })
