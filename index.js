@@ -41,7 +41,7 @@ function createIntern(){
 //Creates new employee and applies questions for that role or generates team profile based on action question
 function nextStep(){
         inquirer.prompt(new Question().assignCustomQuestion()).then(({action})=>{
-            console.log(action)
+            // console.log(action)
             switch (action) {
                 case "Add Engineer":
                     createEngineer();
@@ -61,12 +61,21 @@ function nextStep(){
         })
 }
 
+//generate file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        err ? console.log(err)
+        : console.log("Your Team Profile has been generated SUCCESSFULLY!"); 
+    });
+}
+
+//create Team Profile
 function createTeamProfile() {
     let managerCards = "";
     let engineerCards = "";
     let internCards = "";
 
-    team.forEach(employee => { console.log(employee);
+    team.forEach(employee => {
       if(employee.getRole() === "Manager") {
         managerCards = createManagerCard(employee);
       }  
@@ -84,22 +93,11 @@ function createTeamProfile() {
     writeToFile("./dist/Team Profile.html", bodyHTML(teamCards));
 }
 
-
-//create Team Profile file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
-        err ? console.log(err)
-        : console.log("Your Team Profile has been generated SUCCESSFULLY!"); 
-    });
-}
-
-
 //initalize application
 function init(){
     inquirer.prompt(new Question("Manager").assignCustomQuestion()).then(data =>{
         const manager = new Manager(data.name, data.id, data.email, data.officeNumber)
         team.push(manager);
-        // console.log(answers)
         nextStep();
     })
 }
