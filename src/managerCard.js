@@ -3,7 +3,7 @@ function createManagerCard(manager) {
         <div class="card" style="width: 18rem;">
         <div class="card-header">
             <h2>${manager.name}</h2>
-            <h3><i class="bi bi-cup-hot-fill"></i> ${manager.getRole()}</h3>
+            <h4><i class="bi bi-cup-hot-fill"></i> ${manager.getRole()}</h4>
         </div>
         <div class="list-container">
             <ul class="list-group list-group-flush">

@@ -3,7 +3,7 @@ function createInternCard(intern) {
         <div class="card" style="width: 18rem;">
         <div class="card-header">
             <h2>${intern.name}</h2>
-            <h3><i class="bi bi-mortarboard-fill"></i> ${intern.getRole()}</h3>
+            <h4><i class="bi bi-mortarboard-fill"></i> ${intern.getRole()}</h4>
         </div>
         <div class="list-container">
             <ul class="list-group list-group-flush">
