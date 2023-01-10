@@ -87,7 +87,7 @@ This application includes 4 tests.
 2. Open the Integrated Terminal in VS Code
 3. Run <mark>npm run test</mark>
 
-<p align="center"><img width="282" alt="Screen Shot 2023-01-10 at 4 13 06 PM" src="https://user-images.githubusercontent.com/107971753/211673834-d850f08f-59c0-4b43-a85c-92a5529fd18d.png"></p>
+<img width="282" alt="Screen Shot 2023-01-10 at 4 13 06 PM" src="https://user-images.githubusercontent.com/107971753/211673834-d850f08f-59c0-4b43-a85c-92a5529fd18d.png">
 
 
 
