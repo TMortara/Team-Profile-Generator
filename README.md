@@ -94,3 +94,7 @@ This application includes 4 tests.
 ## Recording
 
 ## Screenshots of Application
+
+### Prompts
+![Screen Shot 2023-01-10 at 4 33 41 PM](https://user-images.githubusercontent.com/107971753/211676749-8011e83b-f5f8-4994-90fe-59cea3f3ce25.png)
+
