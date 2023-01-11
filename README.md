@@ -89,14 +89,18 @@ This application includes 4 tests.
 
 <img width="282" alt="Screen Shot 2023-01-10 at 4 13 06 PM" src="https://user-images.githubusercontent.com/107971753/211673834-d850f08f-59c0-4b43-a85c-92a5529fd18d.png">
 
-
-
 ## Recording
+
+https://drive.google.com/file/d/1Dz8pV0dbAb5etRTJqoRw73pAP_pjRYf8/view
 
 ## Screenshots of Application
 
 ### Prompts
-![Screen Shot 2023-01-10 at 4 33 41 PM](https://user-images.githubusercontent.com/107971753/211676749-8011e83b-f5f8-4994-90fe-59cea3f3ce25.png)
+
+![Screen Shot 2023-01-10 at 10 22 18 PM](https://user-images.githubusercontent.com/107971753/211717235-917912ea-aa9c-47d1-9707-7a241df93e9b.png)
 
 ### Application 
+
+![_Users_tracymortara_UTA-Bootcamp_Challenges_Challenge-10_Team-Profile-Generator_dist_Team%20Profile html (1)](https://user-images.githubusercontent.com/107971753/211717270-a6b7135a-f534-4531-9705-2dbce7f5ce75.png)
+
 
