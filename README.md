@@ -91,7 +91,7 @@ This application includes 4 tests.
 
 ## Recording
 
-https://drive.google.com/file/d/1Dz8pV0dbAb5etRTJqoRw73pAP_pjRYf8/view
+[Team Profile Generator.webm](https://user-images.githubusercontent.com/107971753/211717710-5b3b9046-64c0-4aad-b505-29cd994e460b.webm)
 
 ## Screenshots of Application
 
